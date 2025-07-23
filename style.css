@@ -1,0 +1,272 @@
+@font-face{
+    font-family:'PokemonSolid';
+    src: url('assets/fonts/PokemonSolid.ttf') format('truetype');
+}
+
+h1 {
+  font-family: 'PokemonSolid', sans-serif;
+  font-size: 75px;
+  color: #FFCB05;
+  text-shadow:
+    -5px -5px 0 #1d2c87,
+    -4px -5px 0 #1d2c87,
+    -3px -5px 0 #1d2c87,
+     2px -5px 0 #1d2c87,
+     3px -5px 0 #1d2c87,
+     4px -5px 0 #1d2c87,
+     5px -5px 0 #1d2c87,
+    -5px -4px 0 #1d2c87,
+     5px -4px 0 #1d2c87,
+    -5px -3px 0 #1d2c87,
+     5px -3px 0 #1d2c87,
+    -5px  2px 0 #1d2c87,
+     5px  2px 0 #1d2c87,
+    -5px  3px 0 #1d2c87,
+     5px  3px 0 #1d2c87,
+    -5px  4px 0 #1d2c87,
+     5px  4px 0 #1d2c87,
+    -5px  5px 0 #1d2c87,
+    -4px  5px 0 #1d2c87,
+    -3px  5px 0 #1d2c87,
+     2px  5px 0 #1d2c87,
+     3px  5px 0 #1d2c87,
+     4px  5px 0 #1d2c87,
+     5px  5px 0 #1d2c87;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: url('https://w.wallhaven.cc/full/4x/wallhaven-4x379l.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+}
+
+.container {
+  padding: 20px;
+  text-align: center;
+}
+
+input[type="text"] {
+  padding: 12px 20px;
+  margin-top: 10px;
+  width: 300px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  outline: none;
+}
+
+.pokemon-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.pokemon-card {
+  background-color: rgba(0, 0, 0, 0.6);
+  font-family:'Poppins',cursive;
+  border-radius: 20px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.pokemon-card:hover {
+  transform: scale(1.05);
+}
+
+.pokemon-card img {
+  width: 100px;
+  height: 100px;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: linear-gradient(200deg, #370391, #e0e0e0);
+  padding: 20px;
+  border-radius: 15px;
+  width: 30%;
+  max-width 550%;
+  /* max-width: 550px; */
+  height:85%;
+  text-align: center;
+  position: relative;
+  color: #222;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+.modal-content h2 {
+  font-family: 'Luckiest Guy', cursive;
+  margin: 0 0 10px;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  text-shadow: -2px 2px 0 #01020b;
+}
+
+/* Frame gambar */
+.modal-content .pokemon-image {
+  display: inline-block;
+  border: 3px solid #1d2c87;
+  border-radius: 10px;
+  padding: 4px;
+  background-color: white;
+  margin-bottom: 10px;
+}
+
+.modal-content .pokemon-image img {
+  width: 100px;
+  height: 100px;
+}
+
+
+
+/* STATS FRAME */
+.stats-frame {
+
+  margin-top: 10px;
+  padding: 10px;
+  background: linear-gradient(135deg, #1a0488ff, #e0e0e0);
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  color: white;
+}
+
+.stat-bar {
+  margin-bottom: 15px;  
+  height:17px;
+  font-size:15px;
+  font-family:'Poppins',cursive;
+  text-align: left;
+}
+
+.stat-bar span {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+
+.bar {
+  height: 10px;
+  border-radius: 6px;
+  background: linear-gradient(to right, #ffbc03, #9208d2);
+}
+
+/* CLOSE BUTTON */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.pagination {
+  margin-top: 20px;
+  text-align: center;
+  font-family:'Poppins',cursive;
+}
+
+.pagination button {
+  padding: 8px 16px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 20px;
+  background-color: #0b0b0aff;
+  color: #fafafeff;
+  font-weight: bold;
+  font-family:'Poppins',cursive;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.pagination button:hover {
+  background-color: #e2b204;
+}
+
+#pageIndicator {
+  font-weight: bold;
+  color: black;
+}
+/* BADGE TIPE */
+.type-badge {
+  display: inline-block;
+  color: white;
+  font-weight: bold;
+  font-family:'Poppins',cursive;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 14px;
+  margin: 5px 4px 0 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  text-transform: capitalize;
+}
+
+
+/* BADGE ABILITY */
+.ability-badge {
+  display: inline-block;
+  background-color: #f2f2f2;
+  color: #333;
+  font-weight:bold;
+  font-family:'Poppins',cursive;
+  padding: 4px 5px;
+  border-radius: 900px;
+  font-size: 13px;
+  margin: 3px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+}
+/* Frame luar */
+
+.info-row {
+  display: flex;   
+  flex-direction:column;
+  background: linear-gradient(140deg, #1a0488ff, #e0e0e0);
+  align-items: center;
+  padding: 5px;
+  border-radius: 12px;
+  margin-top: 10px;
+  color: #222;
+  gap: 12px;
+}
+.info-label1 {
+    font-family:'Poppins',cursive;
+    color:white;    
+    font-weight: bold;
+    min-width: 10px;
+}
+
+/* Label seperti "Tipe Pokémon:" */
+/* stats */
+.info-label {
+    font-family:'Poppins',cursive;
+    color:white;    
+    font-weight: bold;
+    margin-right: 5px;
+    min-width: 10px;
+}
+
+/* Isi badge */
+.info-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
